@@ -1,0 +1,252 @@
+# See https://github.com/Tecnativa/doodba#optodoocustomsrcreposyaml
+./odoo:
+  defaults:
+    # Shallow repositories ($DEPTH_DEFAULT=1) are faster & thinner
+    # You may need a bigger depth when merging PRs (use $DEPTH_MERGE
+    # for a sane value of 100 commits)
+    depth: $DEPTH_DEFAULT
+  remotes:
+    ocb: https://github.com/OCA/OCB.git
+    odoo: https://github.com/odoo/odoo.git
+    openupgrade: https://github.com/OCA/OpenUpgrade.git
+  target: ocb $ODOO_VERSION
+  merges:
+    - ocb $ODOO_VERSION
+    # Example of a merge of the PR with the number <PR>
+    # - oca refs/pull/<PR>/head
+
+# OCA MODULES
+oca-sale-workflow:
+  defaults:
+    depth: $DEPTH_DEFAULT
+  remotes:
+    upstream: https://github.com/OCA/sale-workflow.git
+  target: upstream $ODOO_VERSION
+  merges:
+    - upstream $ODOO_VERSION
+
+oca-server-ux:
+  defaults:
+    depth: $DEPTH_DEFAULT
+  remotes:
+    upstream: https://github.com/OCA/server-ux.git
+  target: upstream $ODOO_VERSION
+  merges:
+    - upstream $ODOO_VERSION
+
+oca-server-auth:
+  defaults:
+    depth: $DEPTH_DEFAULT
+  remotes:
+    upstream: https://github.com/OCA/server-auth.git
+  target: upstream $ODOO_VERSION
+  merges:
+    - upstream $ODOO_VERSION
+
+oca-server-backend:
+  defaults:
+    depth: $DEPTH_DEFAULT
+  remotes:
+    upstream: https://github.com/OCA/server-backend.git
+  target: upstream $ODOO_VERSION
+  merges:
+    - upstream $ODOO_VERSION
+
+oca-server-tools:
+  defaults:
+    depth: $DEPTH_DEFAULT
+  remotes:
+    upstream: https://github.com/OCA/server-tools.git
+  target: upstream $ODOO_VERSION
+  merges:
+    - upstream $ODOO_VERSION
+
+oca-queue:
+  defaults:
+    depth: $DEPTH_DEFAULT
+  remotes:
+    upstream: https://github.com/OCA/queue.git
+  target: upstream $ODOO_VERSION
+  merges:
+    - upstream $ODOO_VERSION
+
+oca-account-financial-tools:
+  defaults:
+    depth: $DEPTH_DEFAULT
+  remotes:
+    upstream: https://github.com/OCA/account-financial-tools.git
+  target: upstream $ODOO_VERSION
+  merges:
+    - upstream $ODOO_VERSION
+
+oca-account-financial-reporting:
+  defaults:
+    depth: $DEPTH_DEFAULT
+  remotes:
+    upstream: https://github.com/OCA/account-financial-reporting.git
+  target: upstream $ODOO_VERSION
+  merges:
+    - upstream $ODOO_VERSION
+
+oca-account-invoicing:
+  defaults:
+    depth: $DEPTH_DEFAULT
+  remotes:
+    upstream: https://github.com/OCA/account-invoicing.git
+  target: upstream $ODOO_VERSION
+  merges:
+    - upstream $ODOO_VERSION
+
+oca-operating-unit:
+  defaults:
+    depth: $DEPTH_DEFAULT
+  remotes:
+    upstream: https://github.com/OCA/operating-unit.git
+  target: upstream $ODOO_VERSION
+  merges:
+    - upstream $ODOO_VERSION
+
+oca-mis-builder:
+  defaults:
+    depth: $DEPTH_DEFAULT
+  remotes:
+    upstream: https://github.com/OCA/mis-builder.git
+  target: upstream $ODOO_VERSION
+  merges:
+    - upstream $ODOO_VERSION
+
+oca-currency:
+  defaults:
+    depth: $DEPTH_DEFAULT
+  remotes:
+    upstream: https://github.com/OCA/currency.git
+  target: upstream $ODOO_VERSION
+  merges:
+    - upstream $ODOO_VERSION
+
+oca-reporting-engine:
+  defaults:
+    depth: $DEPTH_DEFAULT
+  remotes:
+    upstream: https://github.com/OCA/reporting-engine.git
+  target: upstream $ODOO_VERSION
+  merges:
+    - upstream $ODOO_VERSION
+
+oca-bank-statement-import:
+  defaults:
+    depth: $DEPTH_DEFAULT
+  remotes:
+    upstream: https://github.com/OCA/bank-statement-import.git
+  target: upstream $ODOO_VERSION
+  merges:
+    - upstream $ODOO_VERSION
+
+oca-web:
+  defaults:
+    depth: $DEPTH_DEFAULT
+  remotes:
+    upstream: https://github.com/OCA/web.git
+  target: upstream $ODOO_VERSION
+  merges:
+    - upstream $ODOO_VERSION
+
+oca-stock-logistics-reporting:
+  defaults:
+    depth: $DEPTH_DEFAULT
+  remotes:
+    upstream: https://github.com/OCA/stock-logistics-reporting.git
+  target: upstream $ODOO_VERSION
+  merges:
+    - upstream $ODOO_VERSION
+
+oca-dms:
+  defaults:
+    depth: $DEPTH_DEFAULT
+  remotes:
+    upstream: https://github.com/OCA/dms.git
+  target: upstream $ODOO_VERSION
+  merges:
+    - upstream $ODOO_VERSION
+
+oca-social:
+  defaults:
+    depth: $DEPTH_DEFAULT
+  remotes:
+    upstream: https://github.com/OCA/social.git
+  target: upstream $ODOO_VERSION
+  merges:
+    - upstream $ODOO_VERSION
+
+oca-project:
+  defaults:
+    depth: $DEPTH_DEFAULT
+  remotes:
+    upstream: https://github.com/OCA/project.git
+  target: upstream $ODOO_VERSION
+  merges:
+    - upstream $ODOO_VERSION
+
+oca-partner-contact:
+  defaults:
+    depth: $DEPTH_DEFAULT
+  remotes:
+    upstream: https://github.com/OCA/partner-contact.git
+  target: upstream $ODOO_VERSION
+  merges:
+    - upstream $ODOO_VERSION
+
+oca-geospatial:
+  defaults:
+    depth: $DEPTH_DEFAULT
+  remotes:
+    upstream: https://github.com/OCA/geospatial.git
+  target: upstream $ODOO_VERSION
+  merges:
+    - upstream $ODOO_VERSION
+
+oca-stock-logistics-warehouse:
+  defaults:
+    depth: $DEPTH_DEFAULT
+  remotes:
+    upstream: https://github.com/OCA/stock-logistics-warehouse.git
+  target: upstream $ODOO_VERSION
+  merges:
+    - upstream $ODOO_VERSION
+
+oca-stock-logistics-workflow:
+  defaults:
+    depth: $DEPTH_DEFAULT
+  remotes:
+    upstream: https://github.com/OCA/stock-logistics-workflow.git
+  target: upstream $ODOO_VERSION
+  merges:
+    - upstream $ODOO_VERSION
+
+oca-connector:
+  defaults:
+    depth: $DEPTH_DEFAULT
+  remotes:
+    upstream: https://github.com/OCA/connector.git
+  target: upstream $ODOO_VERSION
+  merges:
+    - upstream $ODOO_VERSION
+
+oca-account-reconcile:
+  defaults:
+    depth: $DEPTH_DEFAULT
+  remotes:
+    upstream: https://github.com/OCA/account-reconcile.git
+  target: upstream $ODOO_VERSION
+  merges:
+    - upstream $ODOO_VERSION
+
+# SSI MODULES
+ssi-mixin:
+  defaults:
+    depth: $DEPTH_DEFAULT
+  remotes:
+    upstream: https://github.com/open-synergy/ssi-mixin.git
+  target: upstream $ODOO_VERSION
+  merges:
+    - upstream $ODOO_VERSION

@@ -1,0 +1,4 @@
+[options]
+proxy_mode=True
+max_cron_threads=1
+workers=3

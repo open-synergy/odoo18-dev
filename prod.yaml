@@ -1,0 +1,63 @@
+version: "2.4"
+
+services:
+  odoo:
+    extends:
+      file: common.yaml
+      service: odoo
+    restart: unless-stopped
+    env_file:
+      - .docker/odoo.env
+      - .docker/db-access.env
+    environment:
+      DB_FILTER: "^prod"
+      DOODBA_ENVIRONMENT: "${DOODBA_ENVIRONMENT-prod}"
+      INITIAL_LANG: "en_US"
+      ODOO_BUS_PUBLIC_SAMESITE_WS: 1
+      PGHOST: odoo18-dev-18-0-prod-db
+    depends_on:
+      - db
+    networks:
+      default:
+      inverseproxy_shared:
+    labels:
+      - "traefik.enable=true"
+      - "traefik.docker.network=inverseproxy_shared"
+      - "traefik.http.services.odoo18-dev-18-0-prod-main.loadbalancer.server.port=8069"
+      - "traefik.http.services.odoo18-dev-18-0-prod-longpolling.loadbalancer.server.port=8072"
+      - "traefik.http.routers.odoo18-dev-18-0-prod-main.rule=Host(`odoo18-dev.simetri-sinergi.id`)"
+      - "traefik.http.routers.odoo18-dev-18-0-prod-main.tls.certResolver=letsencrypt"
+      - "traefik.http.routers.odoo18-dev-18-0-prod-main.entrypoints=https"
+      - "traefik.http.routers.odoo18-dev-18-0-prod-main.service=odoo18-dev-18-0-prod-main"
+      - "traefik.http.routers.odoo18-dev-18-0-prod-main.middlewares=doodba@file,nocrawlers@file,test-headers@file"
+      - "traefik.http.routers.odoo18-dev-18-0-prod-longpolling.rule=Host(`odoo18-dev.simetri-sinergi.id`)
+        && PathPrefix(`/longpolling/`)"
+      - "traefik.http.routers.odoo18-dev-18-0-prod-longpolling.entrypoints=https"
+      - "traefik.http.routers.odoo18-dev-18-0-prod-longpolling.service=odoo18-dev-18-0-prod-longpolling"
+      - "traefik.http.routers.odoo18-dev-18-0-prod-longpolling.middlewares=secure@file"
+
+  db:
+    extends:
+      file: common.yaml
+      service: db
+    environment:
+      DB_HOST: odoo18-dev-18-0-prod-db
+    env_file:
+      - .docker/db-creation.env
+    restart: unless-stopped
+    networks:
+      default:
+        aliases:
+          - "odoo18-dev-18-0-prod-db"
+
+networks:
+  default:
+    driver_opts:
+      encrypted: 1
+
+  inverseproxy_shared:
+    external: true
+
+volumes:
+  filestore:
+  db:

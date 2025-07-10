@@ -1,0 +1,56 @@
+muk_theme:
+  - "*"
+# OCA
+oca-sale-workflow:
+  - "*"
+oca-server-ux:
+  - "*"
+oca-server-auth:
+  - "*"
+oca-server-backend:
+  - "*"
+oca-server-tools:
+  - "*"
+oca-queue:
+  - "*"
+oca-account-financial-tools:
+  - "*"
+oca-account-financial-reporting:
+  - "*"
+oca-account-invoicing:
+  - "*"
+oca-operating-unit:
+  - "*"
+oca-mis-builder:
+  - "*"
+oca-currency:
+  - "*"
+oca-reporting-engine:
+  - "*"
+oca-bank-statement-import:
+  - "*"
+oca-web:
+  - "*"
+oca-stock-logistics-reporting:
+  - "*"
+oca-dms:
+  - "*"
+oca-social:
+  - "*"
+oca-project:
+  - "*"
+oca-partner-contact:
+  - "*"
+oca-geospatial:
+  - "*"
+oca-stock-logistics-warehouse:
+  - "*"
+oca-stock-logistics-workflow:
+  - "*"
+oca-connector:
+  - "*"
+oca-account-reconcile:
+  - "*"
+# SSI
+ssi-mixin:
+  - "*"
