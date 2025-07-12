@@ -52,5 +52,3 @@ oca-account-reconcile:
 # SSI
 ssi-mixin:
   - "*"
-ssi-app-store:
-  - "*"

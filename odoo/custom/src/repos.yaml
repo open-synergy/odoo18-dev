@@ -250,12 +250,11 @@ ssi-mixin:
   target: upstream $ODOO_VERSION
   merges:
     - upstream $ODOO_VERSION
-
-ssi-app-store:
-  defaults:
-    depth: $DEPTH_DEFAULT
-  remotes:
-    upstream: git@github.com:open-synergy/ssi-app-store.git
-  target: upstream $ODOO_VERSION
-  merges:
-    - upstream $ODOO_VERSION
+# ssi-app-store:
+#   defaults:
+#     depth: $DEPTH_DEFAULT
+#   remotes:
+#     upstream: git@github.com:open-synergy/ssi-app-store.git
+#   target: upstream $ODOO_VERSION
+#   merges:
+#     - upstream $ODOO_VERSION
