@@ -2,6 +2,7 @@ version: "2.4"
 
 services:
   odoo:
+    image: harbor.simetri-sinergi.id/odoo18-dev-odoo:latest
     build:
       context: ./odoo
       args:
